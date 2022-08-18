@@ -8,12 +8,12 @@ describe('Gilded Rose', function () {
     describe('Brie Tests', function() {
         beforeEach(() => gildedRose = new GildedRose([new Item('Aged Brie', 4, 25)]));
         it('Increases in quality as time goes by', () => {
-            let brie = gildedRose.updateQuality();
-            // console.log(brie);
-            // console.log(brie);
-            expect(brie[0].sellIn).to.equal(3);
-            expect(brie[0].quality).to.equal(26);
+            let item = gildedRose.items
+
+            gildedRose.updateQuality()
+            
+            expect(item[0].sellIn).to.equal(3);
+            expect(item[0].quality).to.equal(26);
         })
     })
-
 });
