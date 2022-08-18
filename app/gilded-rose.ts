@@ -9,7 +9,7 @@ export class Item {
         this.quality = quality;
     }
 }
-//Hello World
+
 export class GildedRose {
     items: Array<Item>;
 
