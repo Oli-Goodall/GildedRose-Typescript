@@ -1,20 +1,19 @@
 import { expect } from 'chai';
+
 import { Item, GildedRose } from '../app/gilded-rose';
 
 describe('Gilded Rose', function () {
+    let gildedRose; 
 
-    // it('should foo', function() {
-    //     const gildedRose = new GildedRose([ new Item('foo', 0, 0) ]);
-    //     const items = gildedRose.updateQuality();
-    //     expect(items[0].name).to.equal('foo');
-    // });
-
-    it('experiment to see what the expected output is', function(){
-        const gildedRose = new GildedRose([ new Item('Normal Item', 1, 10)]);
-        gildedRose.updateQuality();
-        let result = gildedRose.updateQuality();
-        expect(result[0].sellIn).to.equal(-1);
-        expect(result[0].quality).to.equal(7);
+    describe('Brie Tests', function() {
+        beforeEach(() => gildedRose = new GildedRose([new Item('Aged Brie', 4, 25)]));
+        it('Increases in quality as time goes by', () => {
+            let brie = gildedRose.updateQuality();
+            // console.log(brie);
+            // console.log(brie);
+            expect(brie[0].sellIn).to.equal(3);
+            expect(brie[0].quality).to.equal(26);
+        })
     })
 
 });
