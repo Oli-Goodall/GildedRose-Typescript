@@ -25,4 +25,15 @@ describe('Gilded Rose', function () {
             expect(items[0].quality).to.equal(50);
         })
     })
+    describe('Normal Item tests', function() {
+        it('Decreases in quality', () => {
+            let gildedRose = new GildedRose([new Item('Normal Item', 4, 25)]);
+            let items = gildedRose.items;
+
+            gildedRose.updateQuality();
+            
+            expect(items[0].sellIn).to.equal(3);
+            expect(items[0].quality).to.equal(24);
+        })
+    })
 });

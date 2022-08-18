@@ -16,12 +16,16 @@ export class GildedRose {
     constructor(items = [] as Array<Item>) {
         this.items = items;
     }
+//Future me, please write this function to make stuff happen to Brie
+    doStuffToBrie(item) {
+
+    }
 
     updateQuality() {
         this.items.forEach(item => {
             item.sellIn --
-            if (item.name === 'Aged Brie' && item.quality !== 50){   
-                item.quality ++
+            if (item.name === 'Aged Brie'){   
+                this.doStuffToBrie(item)
             }
         }) 
         // console.log(this.items)
