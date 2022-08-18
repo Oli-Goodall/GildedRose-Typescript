@@ -19,8 +19,8 @@ export class GildedRose {
 
     updateQuality() {
         this.items.forEach(item => {
-            if (item.name === 'Aged Brie'){
-                item.sellIn --
+            item.sellIn --
+            if (item.name === 'Aged Brie' && item.quality !== 50){   
                 item.quality ++
             }
         }) 
